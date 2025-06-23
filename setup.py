@@ -61,7 +61,7 @@ setup(
         "totalsegmentator @ git+https://github.com/StanfordMIMI/TotalSegmentator.git",
         "totalsegmentatorv2 @ git+https://github.com/StanfordMIMI/TotalSegmentatorV2.git",
         "blosc2==2.5.1",
-        "acvl_utils==0.2.0
+        "acvl_utils==0.2.0"
     ],
     extras_require={
         "all": ["shapely", "psutil"],
