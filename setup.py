@@ -43,7 +43,7 @@ setup(
     packages=find_packages(exclude=("configs", "tests")),
     python_requires=">=3.9",
     install_requires=[
-        "pydicom",
+        "pydicom==2.4.4",
         "moviepy",
         "numpy==1.23.5",
         "h5py",
@@ -60,6 +60,8 @@ setup(
         "tensorflow==2.12.0",
         "totalsegmentator @ git+https://github.com/StanfordMIMI/TotalSegmentator.git",
         "totalsegmentatorv2 @ git+https://github.com/StanfordMIMI/TotalSegmentatorV2.git",
+        "blosc2==2.5.1",
+        "acvl_utils==0.2.0
     ],
     extras_require={
         "all": ["shapely", "psutil"],
