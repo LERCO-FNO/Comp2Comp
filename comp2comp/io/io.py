@@ -135,6 +135,7 @@ def series_selector(dicom_path, pipeline_name=None):
         # if not any("original" in s.lower() for s in image_type_list):
         #     raise ValueError("Not original image type")
         if ds.ImageOrientationPatient != [1, 0, 0, 0, 1, 0]:
+            print("reorienting to LPS")
             image = sitk.GetImageFromArray(ds)
             image = sitk.DICOMOrient(image, "LPS")
             ds = sitk.GetArrayFromImage(image)
