@@ -69,3 +69,6 @@ comp2comp/preferences.yaml
 **/outputs/
 
 **/models/
+
+# ignore input files
+in/
