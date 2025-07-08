@@ -9,6 +9,8 @@ def get_args():
     parser = argparse.ArgumentParser(prog="filter_series.py", description="filter series")
     parser.add_argument("in_directory", type=str, help="input directory containing dicom files")
     parser.add_argument("-od", "--out_directory", type=str, help="output directory of filtered studies", default="./outdir")
+    parser.add_argument("--append_study_uid", action="store_true", help="append StudyInstanceUID to patientID in directory name", default=False)
+    parser.add_argument("--series_dir_name", action="store_true", help="use SeriesInstanceUID or SeriesDescription as directory name", default=False, choices=("desc", "uid"))
 
     return parser.parse_args()
 
@@ -63,7 +65,12 @@ for root, _, files in os.walk(in_directory):
 
 
     for series_uid, paths in series_paths.items():
-        series_dir = Path(out_directory, f"{patient_id}_{study_uid}", series_uid)
+        if args.append_study_uid:
+            patient_id += "_" + study_uid
+    
+        #TODO: implement args.series_dir_name
+            
+        series_dir = Path(out_directory, patient_id, series_uid)
         os.makedirs(series_dir, exist_ok=True)
         
         for src_path in paths:
