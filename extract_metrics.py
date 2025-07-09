@@ -27,8 +27,8 @@ def get_args():
     parser.add_argument("in_directory", type=str)
     parser.add_argument("-od", "--out_directory", type=str, default=os.getcwd(), help="set output directory")
     parser.add_argument("-ve", "--vertebrae", nargs="+", help="vertebrae to extract", choices=allowed_vertebrae, required=True)
-    parser.add_argument("-me", "--metric", nargs="+", help="metric to extract", choices=metrics_map.keys(), required=True)
-    parser.add_argument("-im", "--image", nargs="+", help="segmentation images (PNG) to copy", choices=allowed_pngs)
+    parser.add_argument("-me", "--metrics", nargs="+", help="metric to extract", choices=metrics_map.keys(), required=True)
+    # parser.add_argument("-im", "--images", nargs="+", help="segmentation images (PNG) to copy", choices=allowed_pngs)
     
     return parser.parse_args()
 
@@ -63,7 +63,7 @@ args = get_args()
 in_directory = Path(args.in_directory)
 csv_files = list(in_directory.rglob("muscle*.csv"))
 case_names = [p.stem for p in in_directory.glob("*") if p.is_dir()]
-args.metric = ["level"] + [m for m in args.metric if m != "level"]
+args.metrics = ["level"] + [m for m in args.metric if m != "level"]
 
 case_csv_paths = defaultdict(list[Path])
 for path in csv_files:
