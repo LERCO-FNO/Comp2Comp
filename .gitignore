@@ -65,8 +65,9 @@ comp2comp/preferences.yaml
 # slurm outputs
 **/slurm/
 
-# ignore outputs file
+# ignore outputs/inputs file
 **/outputs/
 outdir/
+in/
 
 **/models/
