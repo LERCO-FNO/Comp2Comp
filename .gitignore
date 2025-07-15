@@ -69,5 +69,6 @@ comp2comp/preferences.yaml
 **/outputs/
 outdir/
 in/
+indir/
 
 **/models/
