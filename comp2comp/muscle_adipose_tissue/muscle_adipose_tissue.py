@@ -268,6 +268,7 @@ class MuscleAdiposeTissuePostProcessing(InferenceClass):
         Returns:
             ndarray: Filled mask.
         """
+        
         int_mask = ((1 - mask) > 0.5).astype(np.int8)
         components, output, stats, _ = cv2.connectedComponentsWithStats(
             int_mask, connectivity=8
@@ -279,6 +280,8 @@ class MuscleAdiposeTissuePostProcessing(InferenceClass):
         if mask_id == 2:
             min_size = 50
             # min_size = 0
+        elif mask_id == 0:
+            min_size = 5
         else:
             min_size = 5
             # min_size = 0
