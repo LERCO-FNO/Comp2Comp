@@ -71,3 +71,6 @@ outdir/
 in/
 
 **/models/
+
+# ignore input files
+in/
