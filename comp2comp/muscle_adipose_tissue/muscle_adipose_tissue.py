@@ -423,16 +423,16 @@ class MuscleAdiposeTissueMetricsSaver(InferenceClass):
         self.model_type.categories
         df = pd.DataFrame(
             columns=[
-                "Level",
-                "Index",
-                "Muscle HU",
-                "Muscle CSA (cm^2)",
-                "SAT HU",
-                "SAT CSA (cm^2)",
-                "VAT HU",
-                "VAT CSA (cm^2)",
-                "IMAT HU",
-                "IMAT CSA (cm^2)",
+                "level",
+                "index",
+                "muscle_hu",
+                "muscle_csa_cm2",
+                "sat_hu",
+                "sat_csa_cm2",
+                "vat_hu",
+                "vat_csa_cm2",
+                "imat_hu",
+                "imat_csa_cm2",
             ]
         )
 
