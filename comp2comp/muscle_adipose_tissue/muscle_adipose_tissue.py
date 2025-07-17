@@ -424,7 +424,7 @@ class MuscleAdiposeTissueMetricsSaver(InferenceClass):
         df = pd.DataFrame(
             columns=[
                 "level",
-                "index",
+                "slice_index",
                 "muscle_hu",
                 "muscle_csa_cm2",
                 "sat_hu",
